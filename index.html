@@ -185,7 +185,24 @@
             height: 40px;
             padding: 10px;
             border: none;
-            top: 2800px;
+            top: 2720px;
+            right: 100px;
+            border-radius: 3px;
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+            background: #ee8a65;
+        }
+
+        #back {
+            display: block;
+            position: absolute;
+            margin: 0px auto;
+            width: 120px;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            top: 2760px;
             right: 100px;
             border-radius: 3px;
             font-size: 12px;
@@ -202,6 +219,7 @@
             font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
             padding: 0;
             width: 180px;
+            text-align: center;
         }
 
         .makerTop1 {
@@ -300,6 +318,7 @@
     <div id="story"></div>
     <nav id="menu"></nav>
     <button id="fly">Fly</button>
+    <button id="back">Back</button>
     <script src="./config.js"></script>
     <script>
         var layerTypes = {
@@ -492,14 +511,7 @@
                         'sky-atmosphere-sun-intensity': 15
                     }
                 });
-                map.addLayer({
-                    'id': 'hillshading',
-                    'source': 'dem',
-                    'type': 'hillshade'
-                    // insert below waterway-river-canal-shadow;
-                    // where hillshading sits in the Mapbox Outdoors style
-                }
-                );
+
                 map.loadImage(
                     'https://i.loli.net/2021/06/16/8dADfCBJPH9NGuc.png',
                     function (error, image) {
@@ -544,6 +556,7 @@
                         .setHTML('<div class="makerTop1"><h3 class="markerHear">土壤类型</h3></div>' + '<div class="markerBody1" ><h4>' + feature.properties.土壤_1 + '</h4></div>')
                         .addTo(map);
                 });
+
                 map.on('click', 'forest', function (e) {
                     var feature = e.features[0];
                     popup
@@ -551,6 +564,7 @@
                         .setHTML('<div class="makerTop"><h3 class="markerHear">植被类型</h3></div>' + '<div class="markerBody" ><h4>' + feature.properties.YOU_SHI_SZ + '</h4></div>')
                         .addTo(map);
                 });
+
             };
             /*if (forest == null) {
                 forest = {
@@ -609,6 +623,24 @@
                     if (chapter.callback) {
                         window[chapter.callback]();
                     }
+                    if (chapter.aspect) {
+                        map.on('click', 'aspect', function (e) {
+                            var feature = e.features[0];
+                            popup
+                                .setLngLat(e.lngLat)
+                                .setText('坡向:' + feature.properties.label)
+                                .addTo(map);
+                        });
+                    }
+                    if (chapter.slope) {
+                        map.on('click', 'slope', function (e) {
+                            var feature = e.features[0];
+                            popup
+                                .setLngLat(e.lngLat)
+                                .setText('坡度在' + feature.properties.label + '之间')
+                                .addTo(map);
+                        });
+                    }
                     if (chapter.showlayer) {
                         //map.on('idle', function () {
                         // If these two layers have been added to the style,
@@ -619,6 +651,17 @@
                             map.flyTo({
                                 center: [115.96, 29.550713],
                                 zoom: 15,
+                                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                            });
+                        });
+                        document.getElementById('back').addEventListener('click', function () {
+                            // Fly to a random location by offsetting the point -74.50, 40
+                            // by up to 5 degrees.
+                            map.flyTo({
+                                center: [115.955, 29.51],
+                                zoom: 11,
+                                pitch: 0,
+                                bearing: -15,
                                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
                             });
                         });
