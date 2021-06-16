@@ -194,6 +194,86 @@
             background: #ee8a65;
         }
 
+        .mapboxgl-popup-close-button {
+            display: none;
+        }
+
+        .mapboxgl-popup-content {
+            font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+            padding: 0;
+            width: 180px;
+        }
+
+        .makerTop1 {
+            background-color: #7c2105c4;
+            background-size: 100% 100%;
+            display: flex;
+            border: solid 1px #5e1c01;
+            align-items: center;
+            border-bottom: none;
+        }
+
+
+        .markerBody1 {
+            background-color: #4e2701;
+            padding: 8px 12px;
+            border: solid 1px #5e3800;
+            border-top: none;
+        }
+
+        .markerBody1 p {
+            font-size: 12px;
+            margin: 0 !important;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .makerTop {
+            background-color: #003b17c4;
+            background-size: 100% 100%;
+            display: flex;
+            border: solid 1px #056434;
+            align-items: center;
+            border-bottom: none;
+        }
+
+
+        .markerBody {
+            background-color: #0e4e27;
+            padding: 8px 12px;
+            border: solid 1px #056434;
+            border-top: none;
+        }
+
+        .markerBody p {
+            font-size: 12px;
+            margin: 0 !important;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .markerHear {
+            width: 80%;
+            font-size: 16px;
+            line-height: 37px;
+            padding-left: 17px;
+            color: #fff;
+            height: 37px;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .mapboxgl-popup-content h4 {
+            margin: 0;
+            display: block;
+            font-weight: 400;
+            text-align: center;
+            color: #fafafa;
+            background-color: transparent;
+        }
+
+
         @media (max-width: 750px) {
 
             .centered,
@@ -420,18 +500,55 @@
                     // where hillshading sits in the Mapbox Outdoors style
                 }
                 );
+                map.loadImage(
+                    'https://i.loli.net/2021/06/16/8dADfCBJPH9NGuc.png',
+                    function (error, image) {
+                        if (error) throw error;
+
+                        // Add the image to the map style.
+                        map.addImage('cat', image);
+
+                        // Add a data source containing one point feature.
+                        map.addSource('point', {
+                            'type': 'geojson',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                'features': [
+                                    {
+                                        'type': 'Feature',
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': [115.963155, 29.553093]
+                                        }
+                                    }
+                                ]
+                            }
+                        });
+
+                        // Add a layer to use the image to represent the data.
+                        map.addLayer({
+                            'id': 'points',
+                            'type': 'symbol',
+                            'source': 'point', // reference the data source
+                            'layout': {
+                                'icon-image': 'cat', // reference the image
+                                'icon-size': 0.05
+                            }
+                        });
+                    }
+                );
                 map.on('click', 'soil', function (e) {
                     var feature = e.features[0];
                     popup
                         .setLngLat(e.lngLat)
-                        .setText(feature.properties.土壤_1)
+                        .setHTML('<div class="makerTop1"><h3 class="markerHear">土壤类型</h3></div>' + '<div class="markerBody1" ><h4>' + feature.properties.土壤_1 + '</h4></div>')
                         .addTo(map);
                 });
                 map.on('click', 'forest', function (e) {
                     var feature = e.features[0];
                     popup
                         .setLngLat(e.lngLat)
-                        .setText(feature.properties.YOU_SHI_SZ)
+                        .setHTML('<div class="makerTop"><h3 class="markerHear">植被类型</h3></div>' + '<div class="markerBody" ><h4>' + feature.properties.YOU_SHI_SZ + '</h4></div>')
                         .addTo(map);
                 });
             };
