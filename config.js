@@ -46,7 +46,7 @@ var config = {
         //image: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp7.itc.cn%2Fq_70%2Fimages03%2F20210508%2F03883c2295c946959226536ea7494167.jpeg&refer=http%3A%2F%2Fp7.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626172326&t=441fe8b02eefc48d5c6d02862eac443b',
         description: '  千年前，一粒银杏树的种子在庐山默默扎根，悄然生长。千年后，明代僧人彻空禅师肇建黄龙寺，在这棵已长得郁郁葱葱的银杏树旁又栽下了几颗柳杉幼苗，这就是三宝树的前身。幼弱的柳杉树同银杏树和周边许许多多树种一起在这片土壤开启了它们的新生活。',
         location: {
-            center: [115.95555, 29.4911],
+            center: [115.960951, 29.552364],
             zoom: 12.92,
             pitch: 39.50,
             bearing: 6.00
@@ -77,10 +77,10 @@ var config = {
         //image: 'https://i.loli.net/2021/06/11/56a1S7jE9bQpKrF.jpg',
         description: '  庐山黄龙寺，坐落于江西省九江市庐山玉屏峰麓。所在踞庐山之中，前对天王峰，后枕玉屏峰，西为赐经亭，下临大溪。寺宇为"万山环抱，松杉碧绕"，修篁蔽日，景色奇幽，"居然胜地"。',
         location: {
-            center: [115.95555, 29.4911],
+            center: [115.960951, 29.552364],
             zoom: 12.92,
             pitch: 39.50,
-            bearing: 36.00
+            bearing: 0
         },
         onChapterEnter: [{
             layer: 'forest',
@@ -114,7 +114,7 @@ var config = {
         //image: '',
         description: '为了体现黄龙寺地区植被与土壤的特殊性，我们制作了高程800~1000米地区的土壤与植被分布图。点击图层可查看具体土壤类型以及植被类型名称。',
         location: {
-            center: [115.955, 29.51],
+            center: [115.946711, 29.531870],
             zoom: 11,
             pitch: 0,
             bearing: -15
@@ -126,6 +126,14 @@ var config = {
         {
             layer: 'soil',
             opacity: 1
+        },
+        {
+            layer: 'aspect',
+            opacity: 0
+        },
+        {
+            layer: 'slope',
+            opacity: 0
         }
 
         ],
@@ -135,6 +143,14 @@ var config = {
         },
         {
             layer: 'soil',
+            opacity: 0
+        },
+        {
+            layer: 'aspect',
+            opacity: 0
+        },
+        {
+            layer: 'slope',
             opacity: 0
         }
         ]
@@ -171,7 +187,7 @@ var config = {
         ]
     },
     {
-        id: 'dixing',
+        id: 'qihou',
         alignment: 'full',
         title: '寺庙选址条件——气候',
         //image: '',
@@ -203,16 +219,16 @@ var config = {
         ]
     },
     {
-        id: '地形',
+        id: 'dixing',
         alignment: 'left',
         title: '寺庙选址条件——地形',
         image: '',
+        slope:true,
         description: '黄龙寺区域大致呈现南北朝向，平均坡度12°，坡形呈保护状，正所谓“千峰环一寺”。黄龙寺区域具备了寺庙选址“宅幽而势阻，地廊而形藏”的特点。',
         location: {
-            center: [115.95555, 29.4911],
-            zoom: 12.92,
-            pitch: 51.50,
-            bearing: -26.40
+            center: [115.960951, 29.552364],
+            zoom: 16.5,
+            pitch: 0
         },
         onChapterEnter: [{
             layer: 'forest',
@@ -220,6 +236,14 @@ var config = {
         },
         {
             layer: 'soil',
+            opacity: 0
+        },
+        {
+            layer: 'slope',
+            opacity: 1
+        },
+        {
+            layer: 'aspect',
             opacity: 0
         }
 
@@ -230,6 +254,13 @@ var config = {
         },
         {
             layer: 'soil',
+            opacity: 0
+        },{
+            layer: 'aspect',
+            opacity: 0
+        },
+        {
+            layer: 'slope',
             opacity: 0
         }
 
@@ -238,14 +269,14 @@ var config = {
     {
         id: 'agassiz1998',
         alignment: 'left',
-        showlayer: true,
         title: '寺庙选址条件——地形',
         image: '',
+        aspect:true,
         description: '✓ 宗教因素:<br/>用中国佛教寺庙的相地方法来看， 黄龙寺寺宇为 "万山环抱，松杉碧绕"，修篁蔽日， 景色奇幽， "居然胜地"，山清水秀， 所在踞庐山之中， 前对天王峰， 后枕玉屏峰， 西为赐经亭， 下临大溪， 符合佛教寺庙选址传统。<br/>✓外部环境因素:<br/> 外部环境和僧估生活的关系紧密， 佛教山地寺庙的相地选址要求良好的小气候、 背风向阳、 气流通畅、 能排泄雨水、 靠近水源及靠近树林便于采薪、 生产等。 ',
         location: {
-            center: [115.95555, 29.4911],
-            zoom: 11.5,
-            pitch: 20.00
+            center: [115.960951, 29.552364],
+            zoom: 16.5,
+            pitch: 0
         },
         onChapterEnter: [{
             layer: 'forest',
@@ -253,6 +284,14 @@ var config = {
         },
         {
             layer: 'soil',
+            opacity: 0
+        },
+        {
+            layer: 'aspect',
+            opacity: 1
+        },
+        {
+            layer: 'slope',
             opacity: 0
         }
         ],
@@ -262,6 +301,13 @@ var config = {
         },
         {
             layer: 'soil',
+            opacity: 0
+        },{
+            layer: 'aspect',
+            opacity: 0
+        },
+        {
+            layer: 'slope',
             opacity: 0
         }
         ]
@@ -301,7 +347,7 @@ var config = {
         id: '尾篇',
         alignment: 'centre',
         title: '尾篇•浮沉',
-        //image: 'https://i.loli.net/2021/06/16/n9HRsB6GpcOwiCz.jpg',
+        //image: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp7.itc.cn%2Fq_70%2Fimages03%2F20210508%2F03883c2295c946959226536ea7494167.jpeg&refer=http%3A%2F%2Fp7.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626172326&t=441fe8b02eefc48d5c6d02862eac443b',
         description: '  三宝树数次险里逃生，矗立在黄龙寺旁，见证黄龙寺的兴衰荣辱。民国时期，三宝树看到黄龙寺换上了新的有一位看起来很有名望的先生题写的牌匾。不久之后，战火纷飞，黄龙寺未能幸免，为战火所创。直到新中国成立后，五十年代中期黄龙寺经过维修整饰，恢复了几分从前的荣光。',
         location: {
             center: [115.95555, 29.4911],
