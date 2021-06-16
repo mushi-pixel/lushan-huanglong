@@ -301,7 +301,7 @@ var config = {
         id: '尾篇',
         alignment: 'centre',
         title: '尾篇•浮沉',
-        //image: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp7.itc.cn%2Fq_70%2Fimages03%2F20210508%2F03883c2295c946959226536ea7494167.jpeg&refer=http%3A%2F%2Fp7.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626172326&t=441fe8b02eefc48d5c6d02862eac443b',
+        //image: 'https://i.loli.net/2021/06/16/n9HRsB6GpcOwiCz.jpg',
         description: '  三宝树数次险里逃生，矗立在黄龙寺旁，见证黄龙寺的兴衰荣辱。民国时期，三宝树看到黄龙寺换上了新的有一位看起来很有名望的先生题写的牌匾。不久之后，战火纷飞，黄龙寺未能幸免，为战火所创。直到新中国成立后，五十年代中期黄龙寺经过维修整饰，恢复了几分从前的荣光。',
         location: {
             center: [115.95555, 29.4911],
