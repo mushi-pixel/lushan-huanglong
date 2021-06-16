@@ -471,7 +471,7 @@ var config = {
         id: '人文4',
         alignment: 'full',
         title: '新中国成重新修葺并作为庐山上唯一佛教活动场所，1957年列为江西省文物保护单位',
-        image: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphoto.tuchong.com%2F485033%2Ff%2F23427484.jpg&refer=http%3A%2F%2Fphoto.tuchong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626187926&t=150d0dba7df254f6ca2da6ee36e274b9',
+        image: 'https://i.loli.net/2021/06/16/n9HRsB6GpcOwiCz.jpg',
         description: ' 黄龙寺的重建并没有按照中式佛寺的布局，毕竟在山野之中，地形不变，所以只有前殿的大雄宝殿，还有后殿的黄龙寺，正好反过来了。黄龙寺内供奉的是释加牟尼佛，并没有多么的富丽堂皇、宏伟高大，显得朴素大方，威严不减。',
         location: {
             center: [115.95555, 29.4911],
