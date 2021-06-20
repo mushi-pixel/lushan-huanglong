@@ -191,7 +191,8 @@ var config = {
         alignment: 'full',
         title: '寺庙选址条件——气候',
         //image: '',
-        video: './images/climate.mp4',
+        //video: './images/climate.mp4',
+        video: 'https://www.bilibili.com/video/BV1ot4y1e7mR',
         description: '黄龙寺位于庐山东谷向斜谷底部，海技900米左右。按垂直自然带的划分属于山地暖温带气候。因其西面、背面、东南面地势均较黄龙寺高，仅在西南面开一小口，如围椅状。并且其受牯岭延伸山体的阻挡，形成一个与河谷相同的山间盆地，水汽不易外泄反而汇聚。',
         location: {
             center: [115.95555, 29.4911],
